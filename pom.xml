@@ -6,7 +6,7 @@
 
     <groupId>fr.fabien</groupId>
     <artifactId>jpa-spring-batch</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>jpa-spring-batch</name>
     <description>Entités et repository JPA pour la consultation de la bdd où Spring Batch trace l'exécution des job.
     </description>
@@ -57,8 +57,9 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.4.0</version>
             </plugin>
         </plugins>
     </build>

@@ -4,9 +4,8 @@ import jakarta.persistence.*;
 
 
 @Entity
-@Table(name = "BATCH_JOB_EXECUTION_PARAMS", indexes = @Index(columnList = "job_execution_id"))
+@Table(name = "BATCH_JOB_EXECUTION_PARAMS", indexes = @Index(columnList = "JOB_EXECUTION_ID"))
 public class JobExecutionParams {
-    @Id
     @Column(name = "PARAMETER_NAME", nullable = false, updatable = false, length = 100)
     private String parameterName;
 
@@ -19,6 +18,7 @@ public class JobExecutionParams {
     @Column(name = "IDENTIFYING", nullable = false)
     private Character identifying;
 
+    @Id
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "JOB_EXECUTION_ID", nullable = false)
     private JobExecution jobExecution;

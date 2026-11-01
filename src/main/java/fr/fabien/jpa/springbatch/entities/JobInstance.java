@@ -8,23 +8,22 @@ import java.util.Set;
 
 @Entity
 @Table(
-        name="BATCH_JOB_INSTANCE",
-        uniqueConstraints = @UniqueConstraint(columnNames = {"job_name", "job_key"})
+        name = "BATCH_JOB_INSTANCE",
+        uniqueConstraints = @UniqueConstraint(columnNames = {"JOB_NAME", "JOB_KEY"})
 )
 public class JobInstance {
-
     @Id
-    @Column(name="JOB_INSTANCE_ID", nullable = false, updatable = false)
+    @Column(name = "JOB_INSTANCE_ID", nullable = false, updatable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long jobInstanceId;
 
-    @Column(name="VERSION")
+    @Column(name = "VERSION")
     private Long version;
 
-    @Column(name="JOB_NAME", nullable = false, length = 100)
+    @Column(name = "JOB_NAME", nullable = false, length = 100)
     private String jobName;
 
-    @Column(name="JOB_KEY", nullable = false, length = 32)
+    @Column(name = "JOB_KEY", nullable = false, length = 32)
     private String jobKey;
 
     @OneToMany(mappedBy = "jobInstance")

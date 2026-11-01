@@ -8,7 +8,7 @@ import java.util.Set;
 
 
 @Entity
-@Table(name = "BATCH_STEP_EXECUTION", indexes = @Index(columnList = "job_execution_id"))
+@Table(name = "BATCH_STEP_EXECUTION", indexes = @Index(columnList = "JOB_EXECUTION_ID"))
 public class StepExecution {
     @Id
     @Column(name = "STEP_EXECUTION_ID", nullable = false, updatable = false)

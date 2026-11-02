@@ -52,110 +52,21 @@ public class JobExecution {
     @OneToMany(mappedBy = "jobExecution")
     private Set<StepExecution> stepExecutions = new HashSet<>();
 
-    public Long getJobExecutionId() {
-        return jobExecutionId;
+    public JobExecution() {
     }
 
-    public void setJobExecutionId(final Long jobExecutionId) {
-        this.jobExecutionId = jobExecutionId;
-    }
-
-    public Long getVersion() {
-        return version;
-    }
-
-    public void setVersion(final Long version) {
+    public JobExecution(Long version, OffsetDateTime createTime, OffsetDateTime startTime, OffsetDateTime endTime, String status, String exitCode, String exitMessage, OffsetDateTime lastUpdated, JobInstance jobInstance, Set<JobExecutionContext> jobExecutionContexts, Set<JobExecutionParams> jobExecutionParams, Set<StepExecution> stepExecutions) {
         this.version = version;
-    }
-
-    public OffsetDateTime getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(final OffsetDateTime createTime) {
         this.createTime = createTime;
-    }
-
-    public OffsetDateTime getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(final OffsetDateTime startTime) {
         this.startTime = startTime;
-    }
-
-    public OffsetDateTime getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(final OffsetDateTime endTime) {
         this.endTime = endTime;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(final String status) {
         this.status = status;
-    }
-
-    public String getExitCode() {
-        return exitCode;
-    }
-
-    public void setExitCode(final String exitCode) {
         this.exitCode = exitCode;
-    }
-
-    public String getExitMessage() {
-        return exitMessage;
-    }
-
-    public void setExitMessage(final String exitMessage) {
         this.exitMessage = exitMessage;
-    }
-
-    public OffsetDateTime getLastUpdated() {
-        return lastUpdated;
-    }
-
-    public void setLastUpdated(final OffsetDateTime lastUpdated) {
         this.lastUpdated = lastUpdated;
-    }
-
-    public JobInstance getJobInstance() {
-        return jobInstance;
-    }
-
-    public void setJobInstance(final JobInstance jobInstance) {
         this.jobInstance = jobInstance;
-    }
-
-    public Set<JobExecutionContext> getJobExecutionContexts() {
-        return jobExecutionContexts;
-    }
-
-    public void setJobExecutionContexts(
-            final Set<JobExecutionContext> jobExecutionContexts) {
         this.jobExecutionContexts = jobExecutionContexts;
-    }
-
-    public Set<JobExecutionParams> getJobExecutionParams() {
-        return jobExecutionParams;
-    }
-
-    public void setJobExecutionParams(
-            final Set<JobExecutionParams> jobExecutionParams) {
         this.jobExecutionParams = jobExecutionParams;
-    }
-
-    public Set<StepExecution> getStepExecutions() {
-        return stepExecutions;
-    }
-
-    public void setStepExecutions(final Set<StepExecution> stepExecutions) {
         this.stepExecutions = stepExecutions;
     }
-
 }

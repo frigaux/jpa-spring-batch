@@ -73,165 +73,28 @@ public class StepExecution {
     @OneToMany(mappedBy = "stepExecution")
     private Set<StepExecutionContext> stepExecutionContexts = new HashSet<>();
 
-    public Long getStepExecutionId() {
-        return stepExecutionId;
+    public StepExecution() {
     }
 
-    public void setStepExecutionId(final Long stepExecutionId) {
-        this.stepExecutionId = stepExecutionId;
-    }
-
-    public Long getVersion() {
-        return version;
-    }
-
-    public void setVersion(final Long version) {
+    public StepExecution(Long version, String stepName, OffsetDateTime createTime, OffsetDateTime startTime, OffsetDateTime endTime, String status, Long commitCount, Long readCount, Long filterCount, Long writeCount, Long readSkipCount, Long writeSkipCount, Long processSkipCount, Long rollbackCount, String exitCode, String exitMessage, OffsetDateTime lastUpdated, JobExecution jobExecution, Set<StepExecutionContext> stepExecutionContexts) {
         this.version = version;
-    }
-
-    public String getStepName() {
-        return stepName;
-    }
-
-    public void setStepName(final String stepName) {
         this.stepName = stepName;
-    }
-
-    public OffsetDateTime getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(final OffsetDateTime createTime) {
         this.createTime = createTime;
-    }
-
-    public OffsetDateTime getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(final OffsetDateTime startTime) {
         this.startTime = startTime;
-    }
-
-    public OffsetDateTime getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(final OffsetDateTime endTime) {
         this.endTime = endTime;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(final String status) {
         this.status = status;
-    }
-
-    public Long getCommitCount() {
-        return commitCount;
-    }
-
-    public void setCommitCount(final Long commitCount) {
         this.commitCount = commitCount;
-    }
-
-    public Long getReadCount() {
-        return readCount;
-    }
-
-    public void setReadCount(final Long readCount) {
         this.readCount = readCount;
-    }
-
-    public Long getFilterCount() {
-        return filterCount;
-    }
-
-    public void setFilterCount(final Long filterCount) {
         this.filterCount = filterCount;
-    }
-
-    public Long getWriteCount() {
-        return writeCount;
-    }
-
-    public void setWriteCount(final Long writeCount) {
         this.writeCount = writeCount;
-    }
-
-    public Long getReadSkipCount() {
-        return readSkipCount;
-    }
-
-    public void setReadSkipCount(final Long readSkipCount) {
         this.readSkipCount = readSkipCount;
-    }
-
-    public Long getWriteSkipCount() {
-        return writeSkipCount;
-    }
-
-    public void setWriteSkipCount(final Long writeSkipCount) {
         this.writeSkipCount = writeSkipCount;
-    }
-
-    public Long getProcessSkipCount() {
-        return processSkipCount;
-    }
-
-    public void setProcessSkipCount(final Long processSkipCount) {
         this.processSkipCount = processSkipCount;
-    }
-
-    public Long getRollbackCount() {
-        return rollbackCount;
-    }
-
-    public void setRollbackCount(final Long rollbackCount) {
         this.rollbackCount = rollbackCount;
-    }
-
-    public String getExitCode() {
-        return exitCode;
-    }
-
-    public void setExitCode(final String exitCode) {
         this.exitCode = exitCode;
-    }
-
-    public String getExitMessage() {
-        return exitMessage;
-    }
-
-    public void setExitMessage(final String exitMessage) {
         this.exitMessage = exitMessage;
-    }
-
-    public OffsetDateTime getLastUpdated() {
-        return lastUpdated;
-    }
-
-    public void setLastUpdated(final OffsetDateTime lastUpdated) {
         this.lastUpdated = lastUpdated;
-    }
-
-    public JobExecution getJobExecution() {
-        return jobExecution;
-    }
-
-    public void setJobExecution(final JobExecution jobExecution) {
         this.jobExecution = jobExecution;
-    }
-
-    public Set<StepExecutionContext> getStepExecutionContexts() {
-        return stepExecutionContexts;
-    }
-
-    public void setStepExecutionContexts(
-            final Set<StepExecutionContext> stepExecutionContexts) {
         this.stepExecutionContexts = stepExecutionContexts;
     }
-
 }

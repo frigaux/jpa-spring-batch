@@ -29,44 +29,13 @@ public class JobInstance {
     @OneToMany(mappedBy = "jobInstance")
     private Set<JobExecution> jobExecutions = new HashSet<>();
 
-    public Long getJobInstanceId() {
-        return jobInstanceId;
+    public JobInstance() {
     }
 
-    public void setJobInstanceId(final Long jobInstanceId) {
-        this.jobInstanceId = jobInstanceId;
-    }
-
-    public Long getVersion() {
-        return version;
-    }
-
-    public void setVersion(final Long version) {
+    public JobInstance(Long version, String jobName, String jobKey, Set<JobExecution> jobExecutions) {
         this.version = version;
-    }
-
-    public String getJobName() {
-        return jobName;
-    }
-
-    public void setJobName(final String jobName) {
         this.jobName = jobName;
-    }
-
-    public String getJobKey() {
-        return jobKey;
-    }
-
-    public void setJobKey(final String jobKey) {
         this.jobKey = jobKey;
-    }
-
-    public Set<JobExecution> getJobExecutions() {
-        return jobExecutions;
-    }
-
-    public void setJobExecutions(final Set<JobExecution> jobExecutions) {
         this.jobExecutions = jobExecutions;
     }
-
 }

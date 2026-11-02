@@ -23,44 +23,14 @@ public class JobExecutionParams {
     @JoinColumn(name = "JOB_EXECUTION_ID", nullable = false)
     private JobExecution jobExecution;
 
-    public String getParameterName() {
-        return parameterName;
+    public JobExecutionParams() {
     }
 
-    public void setParameterName(final String parameterName) {
+    public JobExecutionParams(String parameterName, String parameterType, String parameterValue, Character identifying, JobExecution jobExecution) {
         this.parameterName = parameterName;
-    }
-
-    public String getParameterType() {
-        return parameterType;
-    }
-
-    public void setParameterType(final String parameterType) {
         this.parameterType = parameterType;
-    }
-
-    public String getParameterValue() {
-        return parameterValue;
-    }
-
-    public void setParameterValue(final String parameterValue) {
         this.parameterValue = parameterValue;
-    }
-
-    public Character getIdentifying() {
-        return identifying;
-    }
-
-    public void setIdentifying(final Character identifying) {
         this.identifying = identifying;
-    }
-
-    public JobExecution getJobExecution() {
-        return jobExecution;
-    }
-
-    public void setJobExecution(final JobExecution jobExecution) {
         this.jobExecution = jobExecution;
     }
-
 }

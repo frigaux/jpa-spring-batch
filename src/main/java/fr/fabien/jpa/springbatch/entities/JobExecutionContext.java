@@ -17,28 +17,12 @@ public class JobExecutionContext {
     @JoinColumn(name = "JOB_EXECUTION_ID", nullable = false)
     private JobExecution jobExecution;
 
-    public String getShortContext() {
-        return shortContext;
+    public JobExecutionContext() {
     }
 
-    public void setShortContext(final String shortContext) {
+    public JobExecutionContext(String shortContext, String serializedContext, JobExecution jobExecution) {
         this.shortContext = shortContext;
-    }
-
-    public String getSerializedContext() {
-        return serializedContext;
-    }
-
-    public void setSerializedContext(final String serializedContext) {
         this.serializedContext = serializedContext;
-    }
-
-    public JobExecution getJobExecution() {
-        return jobExecution;
-    }
-
-    public void setJobExecution(final JobExecution jobExecution) {
         this.jobExecution = jobExecution;
     }
-
 }

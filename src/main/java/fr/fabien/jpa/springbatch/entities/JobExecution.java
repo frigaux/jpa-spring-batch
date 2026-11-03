@@ -13,49 +13,49 @@ public class JobExecution {
     @Id
     @Column(name = "JOB_EXECUTION_ID", nullable = false, updatable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long jobExecutionId;
+    public Long jobExecutionId;
 
     @Column(name = "VERSION")
-    private Long version;
+    public Long version;
 
     @Column(name = "CREATE_TIME", nullable = false)
-    private OffsetDateTime createTime;
+    public OffsetDateTime createTime;
 
     @Column(name = "START_TIME")
-    private OffsetDateTime startTime;
+    public OffsetDateTime startTime;
 
     @Column(name = "END_TIME")
-    private OffsetDateTime endTime;
+    public OffsetDateTime endTime;
 
     @Column(name = "STATUS", length = 10)
-    private String status;
+    public String status;
 
     @Column(name = "EXIT_CODE", length = 2500)
-    private String exitCode;
+    public String exitCode;
 
     @Column(name = "EXIT_MESSAGE", length = 2500)
-    private String exitMessage;
+    public String exitMessage;
 
     @Column(name = "LAST_UPDATED")
-    private OffsetDateTime lastUpdated;
+    public OffsetDateTime lastUpdated;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "JOB_INSTANCE_ID", nullable = false)
-    private JobInstance jobInstance;
+    public JobInstance jobInstance;
 
     @OneToMany(mappedBy = "jobExecution")
-    private Set<JobExecutionContext> jobExecutionContexts = new HashSet<>();
+    public Set<JobExecutionContext> jobExecutionContexts = new HashSet<>();
 
     @OneToMany(mappedBy = "jobExecution")
-    private Set<JobExecutionParams> jobExecutionParams = new HashSet<>();
+    public Set<JobExecutionParam> jobExecutionParams = new HashSet<>();
 
     @OneToMany(mappedBy = "jobExecution")
-    private Set<StepExecution> stepExecutions = new HashSet<>();
+    public Set<StepExecution> stepExecutions = new HashSet<>();
 
     public JobExecution() {
     }
 
-    public JobExecution(Long version, OffsetDateTime createTime, OffsetDateTime startTime, OffsetDateTime endTime, String status, String exitCode, String exitMessage, OffsetDateTime lastUpdated, JobInstance jobInstance, Set<JobExecutionContext> jobExecutionContexts, Set<JobExecutionParams> jobExecutionParams, Set<StepExecution> stepExecutions) {
+    public JobExecution(Long version, OffsetDateTime createTime, OffsetDateTime startTime, OffsetDateTime endTime, String status, String exitCode, String exitMessage, OffsetDateTime lastUpdated, JobInstance jobInstance, Set<JobExecutionContext> jobExecutionContexts, Set<JobExecutionParam> jobExecutionParams, Set<StepExecution> stepExecutions) {
         this.version = version;
         this.createTime = createTime;
         this.startTime = startTime;

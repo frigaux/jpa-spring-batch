@@ -13,65 +13,65 @@ public class StepExecution {
     @Id
     @Column(name = "STEP_EXECUTION_ID", nullable = false, updatable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long stepExecutionId;
+    public Long stepExecutionId;
 
     @Column(name = "VERSION", nullable = false)
-    private Long version;
+    public Long version;
 
     @Column(name = "STEP_NAME", nullable = false, length = 100)
-    private String stepName;
+    public String stepName;
 
     @Column(name = "CREATE_TIME", nullable = false)
-    private OffsetDateTime createTime;
+    public OffsetDateTime createTime;
 
     @Column(name = "START_TIME")
-    private OffsetDateTime startTime;
+    public OffsetDateTime startTime;
 
     @Column(name = "END_TIME")
-    private OffsetDateTime endTime;
+    public OffsetDateTime endTime;
 
     @Column(name = "STATUS", length = 10)
-    private String status;
+    public String status;
 
     @Column(name = "COMMIT_COUNT")
-    private Long commitCount;
+    public Long commitCount;
 
     @Column(name = "READ_COUNT")
-    private Long readCount;
+    public Long readCount;
 
     @Column(name = "FILTER_COUNT")
-    private Long filterCount;
+    public Long filterCount;
 
     @Column(name = "WRITE_COUNT")
-    private Long writeCount;
+    public Long writeCount;
 
     @Column(name = "READ_SKIP_COUNT")
-    private Long readSkipCount;
+    public Long readSkipCount;
 
     @Column(name = "WRITE_SKIP_COUNT")
-    private Long writeSkipCount;
+    public Long writeSkipCount;
 
     @Column(name = "PROCESS_SKIP_COUNT")
-    private Long processSkipCount;
+    public Long processSkipCount;
 
     @Column(name = "ROLLBACK_COUNT")
-    private Long rollbackCount;
+    public Long rollbackCount;
 
     @Column(name = "EXIT_CODE", length = 2500)
-    private String exitCode;
+    public String exitCode;
 
     @Column(name = "EXIT_MESSAGE", length = 2500)
-    private String exitMessage;
+    public String exitMessage;
 
     @Column(name = "LAST_UPDATED")
-    private OffsetDateTime lastUpdated;
+    public OffsetDateTime lastUpdated;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "JOB_EXECUTION_ID", nullable = false)
-    private JobExecution jobExecution;
+    public JobExecution jobExecution;
 
     @OneToMany(mappedBy = "stepExecution")
-    private Set<StepExecutionContext> stepExecutionContexts = new HashSet<>();
+    public Set<StepExecutionContext> stepExecutionContexts = new HashSet<>();
 
     public StepExecution() {
     }

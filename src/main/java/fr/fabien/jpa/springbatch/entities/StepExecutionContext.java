@@ -6,20 +6,24 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "BATCH_STEP_EXECUTION_CONTEXT", indexes = @Index(columnList = "STEP_EXECUTION_ID"))
 public class StepExecutionContext {
+    @Id
+    @Column(name = "STEP_EXECUTION_ID")
+    private Long id;
+
     @Column(name = "SHORT_CONTEXT", nullable = false, updatable = false, length = 2500)
-    private String shortContext;
+    public String shortContext;
 
     @Column(name = "SERIALIZED_CONTEXT", columnDefinition = "longtext")
-    private String serializedContext;
+    public String serializedContext;
 
-    @Id
+    @MapsId
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "STEP_EXECUTION_ID", nullable = false)
-    private StepExecution stepExecution;
+    public StepExecution stepExecution;
 
     public StepExecutionContext() {
     }
-    
+
     public StepExecutionContext(String shortContext, String serializedContext, StepExecution stepExecution) {
         this.shortContext = shortContext;
         this.serializedContext = serializedContext;

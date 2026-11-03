@@ -15,19 +15,19 @@ public class JobInstance {
     @Id
     @Column(name = "JOB_INSTANCE_ID", nullable = false, updatable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long jobInstanceId;
+    public Long jobInstanceId;
 
     @Column(name = "VERSION")
-    private Long version;
+    public Long version;
 
     @Column(name = "JOB_NAME", nullable = false, length = 100)
-    private String jobName;
+    public String jobName;
 
     @Column(name = "JOB_KEY", nullable = false, length = 32)
-    private String jobKey;
+    public String jobKey;
 
     @OneToMany(mappedBy = "jobInstance")
-    private Set<JobExecution> jobExecutions = new HashSet<>();
+    public Set<JobExecution> jobExecutions = new HashSet<>();
 
     public JobInstance() {
     }

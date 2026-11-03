@@ -1,4 +1,4 @@
-# Exemple de dépendance JPA en Spring Boot 4 pour consulter la base de Spring Batch
+# Exemple de dépendance JPA en Spring Boot 4 pour consulter la bdd de Spring Batch 6.0.5
 
 - spring-boot-starter-parent 4.1.2
     - spring-boot-starter-data-jpa
